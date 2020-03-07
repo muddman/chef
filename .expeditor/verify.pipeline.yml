@@ -20,6 +20,7 @@ steps:
   commands:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - cd /workdir; bundle install --jobs=3 --retry=3 --without omnibus_package docgen
+    - echo +++ testing
     - bundle exec rake spec:integration
   expeditor:
     executor:
@@ -36,6 +37,7 @@ steps:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - apt-get install -y cron locales # needed for functional tests to pass
     - cd /workdir; bundle install --jobs=3 --retry=3 --without omnibus_package docgen ruby_prof
+    - echo +++ testing
     - bundle exec rake spec:functional
   expeditor:
     executor:
@@ -50,6 +52,7 @@ steps:
   commands:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - bundle install --jobs=3 --retry=3 --without omnibus_package docgen ruby_prof
+    - echo +++ testing
     - bundle exec rake spec:unit
     - bundle exec rake component_specs
   expeditor:
@@ -64,6 +67,7 @@ steps:
   commands:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - cd /workdir; bundle install --jobs=3 --retry=3 --without omnibus_package docgen
+    - echo +++ testing
     - bundle exec rake spec:integration
   expeditor:
     executor:
@@ -80,6 +84,7 @@ steps:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - yum install -y crontabs e2fsprogs util-linux
     - cd /workdir; bundle install --jobs=3 --retry=3 --without omnibus_package docgen ruby_prof
+    - echo +++ testing
     - bundle exec rake spec:functional
   expeditor:
     executor:
@@ -94,6 +99,7 @@ steps:
   commands:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - bundle install --jobs=3 --retry=3 --without omnibus_package docgen ruby_prof
+    - echo +++ testing
     - bundle exec rake spec:unit
     - bundle exec rake component_specs
   expeditor:
@@ -108,6 +114,7 @@ steps:
   commands:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - cd /workdir; bundle install --jobs=3 --retry=3 --without omnibus_package docgen
+    - echo +++ testing
     - bundle exec rake spec:integration
   expeditor:
     executor:
@@ -124,6 +131,7 @@ steps:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - zypper install -y cronie
     - cd /workdir; bundle install --jobs=3 --retry=3 --without omnibus_package docgen ruby_prof
+    - echo +++ testing
     - bundle exec rake spec:functional
   expeditor:
     executor:
@@ -138,6 +146,7 @@ steps:
   commands:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - bundle install --jobs=3 --retry=3 --without omnibus_package docgen ruby_prof
+    - echo +++ testing
     - bundle exec rake spec:unit
     - bundle exec rake component_specs
   expeditor:
@@ -152,6 +161,7 @@ steps:
   commands:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - cd /workdir; bundle install --jobs=3 --retry=3 --without omnibus_package docgen
+    - echo +++ testing
     - bundle exec rake spec:integration
   expeditor:
     executor:
@@ -168,6 +178,7 @@ steps:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - yum install -y crontabs e2fsprogs util-linux
     - cd /workdir; bundle install --jobs=3 --retry=3 --without omnibus_package docgen ruby_prof
+    - echo +++ testing
     - bundle exec rake spec:functional
   expeditor:
     executor:
@@ -182,6 +193,7 @@ steps:
   commands:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - bundle install --jobs=3 --retry=3 --without omnibus_package docgen ruby_prof
+    - echo +++ testing
     - bundle exec rake spec:unit
     - bundle exec rake component_specs
   expeditor:
@@ -238,6 +250,7 @@ steps:
   commands:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - bundle install --jobs=3 --retry=3 --without omnibus_package docgen ruby_prof
+    - echo +++ testing
     - bundle exec rake style
   expeditor:
     executor:
@@ -252,6 +265,7 @@ steps:
   commands:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - bundle install --jobs=3 --retry=3 --without omnibus_package docgen
+    - echo +++ testing
     - bundle exec rake spec:integration
   expeditor:
     executor:
@@ -268,6 +282,7 @@ steps:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - apt-get install -y cron locales net-tools # needed for functional tests to pass
     - bundle install --jobs=3 --retry=3 --without omnibus_package docgen
+    - echo +++ testing
     - bundle exec rake spec:functional
   expeditor:
     executor:
@@ -283,6 +298,7 @@ steps:
   commands:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - bundle install --jobs=3 --retry=3 --without omnibus_package docgen
+    - echo +++ testing
     - bundle exec rake spec:unit
     - bundle exec rake component_specs
   expeditor:
@@ -302,6 +318,7 @@ steps:
   commands:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - bundle install --jobs=3 --retry=3 --without omnibus_package docgen
+    - echo +++ testing
     - bundle exec tasks/bin/run_external_test chef/chef-sugar master rake
   expeditor:
     executor:
@@ -312,6 +329,7 @@ steps:
   commands:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - bundle install --jobs=3 --retry=3 --without omnibus_package docgen
+    - echo +++ testing
     - bundle exec tasks/bin/run_external_test chef/chef-zero master rake pedant
   expeditor:
     executor:
@@ -325,6 +343,7 @@ steps:
   commands:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - bundle install --jobs=3 --retry=3 --without omnibus_package docgen
+    - echo +++ testing
     - bundle exec tasks/bin/run_external_test chef/cheffish master rake spec
   expeditor:
     executor:
@@ -335,6 +354,7 @@ steps:
   commands:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - bundle install --jobs=3 --retry=3 --without omnibus_package docgen
+    - echo +++ testing
     - bundle exec tasks/bin/run_external_test chefspec/chefspec master rake
   expeditor:
     executor:
@@ -345,6 +365,7 @@ steps:
   commands:
     - /workdir/scripts/bk_tests/bk_container_prep.sh
     - bundle install --jobs=3 --retry=3 --without omnibus_package docgen
+    - echo +++ testing
     - bundle exec tasks/bin/run_external_test chef/knife-windows master rake spec
   expeditor:
     executor:
@@ -357,6 +378,7 @@ steps:
     - apt-get install -y graphviz
     - gem install bundler -v 1.17.3 # necessary for berks Gemfile.lock for now
     - bundle install --jobs=3 --retry=3 --without omnibus_package docgen
+    - echo +++ testing
     - bundle exec tasks/bin/run_external_test berkshelf/berkshelf master rake
   expeditor:
     executor:
@@ -371,6 +393,7 @@ steps:
   commands:
     - scripts/bk_tests/bk_linux_exec.sh
     - cd kitchen-tests
+    - echo +++ testing
     - ~/.asdf/shims/bundle exec kitchen test end-to-end-amazonlinux-2
   artifact_paths:
     - $PWD/.kitchen/logs/kitchen.log
@@ -386,6 +409,7 @@ steps:
   commands:
     - scripts/bk_tests/bk_linux_exec.sh
     - cd kitchen-tests
+    - echo +++ testing
     - ~/.asdf/shims/bundle exec kitchen test end-to-end-amazonlinux-2
   artifact_paths:
     - $PWD/.kitchen/logs/kitchen.log
@@ -401,6 +425,7 @@ steps:
   commands:
     - scripts/bk_tests/bk_linux_exec.sh
     - cd kitchen-tests
+    - echo +++ testing
     - ~/.asdf/shims/bundle exec kitchen test end-to-end-ubuntu-1604
   artifact_paths:
     - $PWD/.kitchen/logs/kitchen.log
@@ -417,6 +442,7 @@ steps:
   commands:
     - scripts/bk_tests/bk_linux_exec.sh
     - cd kitchen-tests
+    - echo +++ testing
     - ~/.asdf/shims/bundle exec kitchen test end-to-end-ubuntu-1804
   artifact_paths:
     - $PWD/.kitchen/logs/kitchen.log
@@ -432,6 +458,7 @@ steps:
   commands:
     - scripts/bk_tests/bk_linux_exec.sh
     - cd kitchen-tests
+    - echo +++ testing
     - ~/.asdf/shims/bundle exec kitchen test end-to-end-ubuntu-2004
   artifact_paths:
     - $PWD/.kitchen/logs/kitchen.log
@@ -447,6 +474,7 @@ steps:
   commands:
     - scripts/bk_tests/bk_linux_exec.sh
     - cd kitchen-tests
+    - echo +++ testing
     - ~/.asdf/shims/bundle exec kitchen test end-to-end-debian-8
   artifact_paths:
     - $PWD/.kitchen/logs/kitchen.log
@@ -462,6 +490,7 @@ steps:
   commands:
     - scripts/bk_tests/bk_linux_exec.sh
     - cd kitchen-tests
+    - echo +++ testing
     - ~/.asdf/shims/bundle exec kitchen test end-to-end-debian-9
   artifact_paths:
     - $PWD/.kitchen/logs/kitchen.log
@@ -477,6 +506,7 @@ steps:
   commands:
     - scripts/bk_tests/bk_linux_exec.sh
     - cd kitchen-tests
+    - echo +++ testing
     - ~/.asdf/shims/bundle exec kitchen test end-to-end-debian-10
   artifact_paths:
     - $PWD/.kitchen/logs/kitchen.log
@@ -492,6 +522,7 @@ steps:
   commands:
     - scripts/bk_tests/bk_linux_exec.sh
     - cd kitchen-tests
+    - echo +++ testing
     - ~/.asdf/shims/bundle exec kitchen test end-to-end-centos-6
   artifact_paths:
     - $PWD/.kitchen/logs/kitchen.log
@@ -507,6 +538,7 @@ steps:
   commands:
     - scripts/bk_tests/bk_linux_exec.sh
     - cd kitchen-tests
+    - echo +++ testing
     - ~/.asdf/shims/bundle exec kitchen test end-to-end-centos-7
   artifact_paths:
     - $PWD/.kitchen/logs/kitchen.log
@@ -522,6 +554,7 @@ steps:
   commands:
     - scripts/bk_tests/bk_linux_exec.sh
     - cd kitchen-tests
+    - echo +++ testing
     - ~/.asdf/shims/bundle exec kitchen test end-to-end-centos-8
   artifact_paths:
     - $PWD/.kitchen/logs/kitchen.log
@@ -537,6 +570,7 @@ steps:
   commands:
     - scripts/bk_tests/bk_linux_exec.sh
     - cd kitchen-tests
+    - echo +++ testing
     - ~/.asdf/shims/bundle exec kitchen test end-to-end-oraclelinux-6
   artifact_paths:
     - $PWD/.kitchen/logs/kitchen.log
@@ -552,6 +586,7 @@ steps:
   commands:
     - scripts/bk_tests/bk_linux_exec.sh
     - cd kitchen-tests
+    - echo +++ testing
     - ~/.asdf/shims/bundle exec kitchen test end-to-end-oraclelinux-7
   artifact_paths:
     - $PWD/.kitchen/logs/kitchen.log
@@ -567,6 +602,7 @@ steps:
   commands:
     - scripts/bk_tests/bk_linux_exec.sh
     - cd kitchen-tests
+    - echo +++ testing
     - ~/.asdf/shims/bundle exec kitchen test end-to-end-fedora-latest
   artifact_paths:
     - $PWD/.kitchen/logs/kitchen.log
@@ -582,6 +618,7 @@ steps:
   commands:
     - scripts/bk_tests/bk_linux_exec.sh
     - cd kitchen-tests
+    - echo +++ testing
     - ~/.asdf/shims/bundle exec kitchen test end-to-end-opensuse-leap-15
   artifact_paths:
     - $PWD/.kitchen/logs/kitchen.log
