@@ -43,7 +43,8 @@ RspecVersionString.rspec_version_string
 require "spec_helper"
 require "ostruct"
 
-describe Chef::Provider::Package::Rubygems::CurrentGemEnvironment do
+# TODO: remove order
+describe Chef::Provider::Package::Rubygems::CurrentGemEnvironment, order: :defined do
   include GemspecBackcompatCreator
 
   let(:logger) { double("Mixlib::Log::Child").as_null_object }
@@ -191,7 +192,8 @@ describe Chef::Provider::Package::Rubygems::CurrentGemEnvironment do
 
 end
 
-describe Chef::Provider::Package::Rubygems::AlternateGemEnvironment do
+# TODO: remove order
+describe Chef::Provider::Package::Rubygems::AlternateGemEnvironment, order: :defined do
   include GemspecBackcompatCreator
 
   before do
@@ -356,7 +358,8 @@ describe Chef::Provider::Package::Rubygems::AlternateGemEnvironment do
 
 end
 
-describe Chef::Provider::Package::Rubygems do
+# TODO: remove order
+describe Chef::Provider::Package::Rubygems, order: :defined do
   let(:target_version) { nil }
   let(:gem_name) { "rspec-core" }
   let(:gem_binary) { nil }
